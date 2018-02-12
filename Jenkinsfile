@@ -1,5 +1,6 @@
 #!/usr/bin/env groovy
 pipeline {
+    agent any
     node("master") {
         docker.withRegistry('192.168.180.22:32031') {
            stage 'clone'
