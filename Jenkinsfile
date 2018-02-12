@@ -1,10 +1,8 @@
 pipeline {
-agent {
-        label 'master'
-    }
+    stage 'contact docker slave'
     node("docker") {
 	    docker.withRegistry('192.168.180.22:32031') {
-	        stage 'clone'
+	        stage 'clone code'
 	        git url: "https://github.com/ryandarby/sample/"
 	    
 	        sh "git rev-parse HEAD > .git/commit-id"
