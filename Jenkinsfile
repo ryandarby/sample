@@ -1,6 +1,6 @@
 node("docker") {
     docker.withRegistry('192.168.180.22:32031') {
-    
+        stage 'clone'
         git url: "https://github.com/ryandarby/sample/"
     
         sh "git rev-parse HEAD > .git/commit-id"
